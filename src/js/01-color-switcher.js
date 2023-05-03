@@ -11,12 +11,12 @@ function onButtonStart() {
   onToggelBtnActivity();
   changeColorBody();
 
-  intervalEl = setInterval(changeColorBody, 1000);
+  intervalColor = setInterval(changeColorBody, 1000);
 }
 
 
 function onButtonStop() {
-  clearInterval(intervalEl);
+  clearInterval(intervalColor);
 
   onToggelBtnActivity();
 }
