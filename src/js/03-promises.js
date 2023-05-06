@@ -29,8 +29,8 @@ form.addEventListener('submit', evt => {
 
   for (let i = 1; i <= amount.value; i += 1) {
     createPromise(i, currentDelay)
-      .then(value => Notify.success('✅ Fulfilled promise ${position} in ${delay}ms'))
-      .catch(error => Notify.failure('❌ Rejected promise ${position} in ${delay}ms'))
+      .then(position, delay => Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`))
+      .catch(position, delay => Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`))
       .finally(() => {
         if (Number(amount.value) === i) {
           submitBtn.removeAttribute('disabled');
